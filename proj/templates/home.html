@@ -4,7 +4,7 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-    Hi {{ user.username }}!
+    <p>You are logged in as {{ user.username }}</p>
     <div>
         <form action="/app/send_message/" method="POST">
             {% csrf_token %}
