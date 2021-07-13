@@ -6,3 +6,15 @@ services:
     restart: always
     ports:
       - '6379:6379'
+
+  postgresql:
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=user
+      - POSTGRES_DB=django
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    restart: always
